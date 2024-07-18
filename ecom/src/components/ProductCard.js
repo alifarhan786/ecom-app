@@ -1,5 +1,4 @@
 import React from 'react';
-import { BsArrowRight } from 'react-icons/bs';
 import { BsBagPlus } from 'react-icons/bs';
 import { useDispatch, useSelector } from 'react-redux';
 import { ToastContainer, toast } from 'react-toastify';

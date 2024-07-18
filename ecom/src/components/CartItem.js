@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { MdOutlineClose } from 'react-icons/md';
 import { useDispatch, useSelector } from 'react-redux';
 import { decrementQuantity, deleteItem, incrementQuantity, resetCart } from '../redux/chicloomSlice';
@@ -10,7 +10,7 @@ const CartItem = () => {
     const dispatch = useDispatch();
     const isToggleOn = useSelector((state) => state.chicloom.isToggleOn);
     const productData = useSelector((state) => state.chicloom.productData);
-    let [baseQty, setBaseQty] = useState(1);
+    
 
     return (
         <div className='w-full  mx-auto'>

@@ -70,7 +70,7 @@ const Orders = () => {
               <div className='md:hidden'>
                 {order.items.map((item, index) => (
                   <li key={index} className='flex justify-between px-3 py-4 md:flex-row'>
-                  <span className='w-1/3 md:w-1/3'><img className='w-28 h-28 rounded-md' src={item.image}/></span>
+                  <span className='w-1/3 md:w-1/3'><img className='w-28 h-28 rounded-md' src={item.image} alt={item.title}/></span>
                  
 
                   <div className='w-2/3 md:w-2/3 flex flex-col justify-between md:flex-row  mt-3 md:mt-0  ml-4  md:items-center'>

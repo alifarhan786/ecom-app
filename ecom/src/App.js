@@ -3,7 +3,7 @@ import Home from './pages/Home';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Cart from './pages/Cart';
-import { createBrowserRouter,Outlet,RouterProvider,ScrollRestoration } from 'react-router-dom';
+import { createBrowserRouter,Outlet,RouterProvider } from 'react-router-dom';
 import { productsData } from './api/Api';
 import Product from './components/Product';
 import { useSelector } from 'react-redux';

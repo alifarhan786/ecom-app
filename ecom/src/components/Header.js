@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { FaRegUserCircle } from "react-icons/fa";
-import { cartImg, logoDark, logoLight, userImg } from "../assets/index.js"
+import { logoDark, logoLight, userImg } from "../assets/index.js"
 import { Link } from 'react-router-dom'
 import { FaBars, FaTimes, FaToggleOn, FaToggleOff } from 'react-icons/fa';
 import { BsBag } from 'react-icons/bs';
@@ -22,9 +22,7 @@ const Header = () => {
         setIsMenuOpen(false);
         window.scrollTo({ top: 0, behavior: 'smooth' });
     };
-    const scroll =()=>{
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
+    
     return (
         <div className={`w-full h-20 border-b-[1px] border-b-gray-800 font-titleFont sticky top-0 z-50 ${isToggleOn ? 'bg-black text-gray-300 border-b-gray-800' : 'bg-white text-black border-b-gray-300'}`}>
             <div className='max-w-screen-xl h-full mx-auto flex items-center justify-between px-4'>

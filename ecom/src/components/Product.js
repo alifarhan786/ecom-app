@@ -22,15 +22,7 @@ const Product = () => {
     }
   }, [location.state.item]);
 
-  const [num, setNum] = useState(0);
-  const inc = () => {
-    setNum(num + 1);
-  };
-  const dec = () => {
-    if (num > 0) {
-      setNum(num - 1);
-    }
-  };
+  
 console.log(details)
   return (
     <div className='max-w-screen-xl mx-auto my-10 px-2 sm:px-4 lg:px-8'>

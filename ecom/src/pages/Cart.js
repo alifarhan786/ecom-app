@@ -14,7 +14,7 @@ const Cart = () => {
   const userInfo = useSelector((state) => state.chicloom.userInfo);
   const isToggleOn = useSelector((state) => state.chicloom.isToggleOn);
   const [totalAmt, setTotalAmt] = useState("");
-  const [payNow, setPayNow] = useState(false);
+
 
   useEffect(() => {
     let price = 0;
