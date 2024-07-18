@@ -1,0 +1,28 @@
+{
+    "version": 2,
+    "name": "chicloom-project",
+    "builds": [
+      {
+        "src": "ecom/package.json",
+        "use": "@vercel/static-build",
+        "config": {
+          "distDir": "ecom/build"
+        }
+      },
+      {
+        "src": "server/server.js",
+        "use": "@vercel/node"
+      }
+    ],
+    "routes": [
+      {
+        "src": "/api/(.*)",
+        "dest": "server/server.js"
+      },
+      {
+        "src": "/(.*)",
+        "dest": "/ecom/$1"
+      }
+    ]
+  }
+  

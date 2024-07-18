@@ -1,0 +1,12 @@
+# Ignore node_modules in subdirectories
+ecom/node_modules
+server/node_modules
+
+# Ignore build outputs
+ecom/build
+server/build
+
+# Ignore misc files
+.DS_Store
+.env
+
