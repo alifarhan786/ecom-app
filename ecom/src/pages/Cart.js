@@ -26,7 +26,7 @@ const Cart = () => {
 
   const handleCheckout = async () => {
     if (userInfo) {
-      const orderUrl = 'http://ecom-app-backend-86re.onrender.com/create-order'; // Make sure this is the correct URL
+      const orderUrl = 'https://ecom-app-backend-86re.onrender.com/create-order'; // Make sure this is the correct URL
       const orderData = {
         amount: totalAmt * 100, // Razorpay works with smallest currency unit (paise for INR)
         currency: 'INR',
