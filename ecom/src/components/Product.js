@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
-import { MdOutlineStar } from 'react-icons/md';
+import { MdOutlineStar , MdOutlineStarBorder } from 'react-icons/md';
 import 'react-inner-image-zoom/lib/InnerImageZoom/styles.min.css';
 import InnerImageZoom from 'react-inner-image-zoom';
 import { useDispatch, useSelector } from 'react-redux';
@@ -14,16 +14,23 @@ const Product = () => {
   const [selectedImage, setSelectedImage] = useState('');
   const isToggleOn = useSelector((state)=>state.chicloom.isToggleOn)
   const location = useLocation();
-  
   useEffect(() => {
     setDetails(location.state.item);
-    if (location.state.item.image ) {
-      setSelectedImage(location.state.item.image);
+    if (location.state.item.image) {
+      setSelectedImage(location.state.item.image[0]);
+    
     }
+    
   }, [location.state.item]);
-
-  
-console.log(details)
+  const maxStars = 5;
+  // Create an array with the correct number of filled and empty stars
+  const stars = Array.from({ length: maxStars }, (_, index) => (
+    index < details.rating ? (
+      <MdOutlineStar key={index} />
+    ) : (
+      <MdOutlineStarBorder key={index} />
+    )
+  ));
   return (
     <div className='max-w-screen-xl mx-auto my-10 px-2 sm:px-4 lg:px-8'>
       <div className='flex flex-col lg:flex-row gap-10'>
@@ -34,7 +41,8 @@ console.log(details)
               zoomSrc={selectedImage}
               zoomType="click"
               zoomPreload={true}
-              className='w-full h-[300px] sm:h-[400px] md:h-[450px] lg:h-[550px] object-cover'
+              fullscreenOnMobile={true}
+              className='w-full h-[500px] sm:h-[400px] md:h-[450px] lg:h-[550px] object-cover'
             />
           )}
           
@@ -54,17 +62,12 @@ console.log(details)
           <div>
             <h2 className='text-2xl sm:text-3xl lg:text-4xl font-semibold'>{details.title}</h2>
             <div className='flex items-center gap-2 sm:gap-4 mt-2 sm:mt-3'>
-              <p className="line-through text-sm sm:text-base text-gray-500">${details.oldPrice}</p>
+              <p className="line-through text-sm sm:text-base text-gray-500">Rs. {details.oldPrice}</p>
               <p className="text-xl sm:text-2xl font-medium ">${details.price}</p>
             </div>
           </div>
           <div className='flex items-center gap-1 sm:gap-2 text-sm sm:text-base'>
-            <MdOutlineStar />
-            <MdOutlineStar />
-            <MdOutlineStar />
-            <MdOutlineStar />
-            <MdOutlineStar />
-            {details.rating}
+            {stars}
           </div>
           <p className='text-sm sm:text-base'>{details.description}</p>
           <div className='flex flex-col sm:flex-row gap-4'>

@@ -37,12 +37,12 @@ const Header = () => {
                     </div>
                 </Link>
                 <div className='hidden md:flex item-center gap-8 slide-in' >
-                    <ul className='flex item-center gap-8'>
-                        <li className={`text-base font-bold ${isToggleOn ? " hover:text-cyan-500 " : "hover:text-orange-900"}  hover:underline underline-offset-1 decoration-[1px] cursor-pointer duration-300 flex items-center h-full`}>Home</li>
-                        <li className={`text-base font-bold ${isToggleOn ? " hover:text-cyan-500 " : "hover:text-orange-900"}  hover:underline underline-offset-1 decoration-[1px] cursor-pointer duration-300 flex items-center h-full`}>Catagories</li>
-                      <Link to="./my-orders"><li className={`text-base font-bold ${isToggleOn ? " hover:text-cyan-500 " : "hover:text-orange-900"}  hover:underline underline-offset-1 decoration-[1px] cursor-pointer duration-300 flex items-center h-full`}>Orders</li></Link>
-                        <li className={`text-base font-bold ${isToggleOn ? " hover:text-cyan-500 " : "hover:text-orange-900"}  hover:underline underline-offset-1 decoration-[1px] cursor-pointer duration-300 flex items-center h-full`}>Contact</li>
-                        <Link to="./about"><li className={`text-base font-bold ${isToggleOn ? " hover:text-cyan-500 " : "hover:text-orange-900"}  hover:underline underline-offset-1 decoration-[1px] cursor-pointer duration-300 flex items-center h-full`}>About</li></Link>
+                    <ul id='Navbar' className='flex item-center gap-2'>
+                        <Link><li className={` group flex ${isToggleOn ? "after:bg-white " : "after:bg-black"}`}><h4 className={`${isToggleOn?" text-white group-hover:text-black":"text-black group-hover:text-white"}`}>Home</h4></li></Link>
+                        <Link to="./catagory"><li className={`group items-center ${isToggleOn ? " after:bg-white " : " after:bg-black "}  `}><h4 className={`${isToggleOn?" text-white group-hover:text-black":"text-black group-hover:text-white"}`}>Catagories</h4></li></Link>
+                        <Link to="./my-orders"><li className={`group ${isToggleOn ? "after:bg-white " : "after:bg-black"}  `}><h4 className={`${isToggleOn?" text-white group-hover:text-black":"text-black group-hover:text-white"}`}>Orders</h4></li></Link>
+                        <Link to="./contact"><li className={`group ${isToggleOn ? "after:bg-white " : "after:bg-black"}`}><h4 className={`${isToggleOn?" text-white group-hover:text-black":"text-black group-hover:text-white"}`}>Contact</h4></li></Link>
+                        <Link to="./about"><li className={`group items-center ${isToggleOn ? "after:bg-white " : "after:bg-black"}  `}><h4 className={`${isToggleOn?" text-white group-hover:text-black":"text-black group-hover:text-white"}`}>About</h4></li></Link>
                     </ul>
                     <Link  to="./cart" onClick={handleCloseMenu}>
                         <div className='relative my-4 flex items-center'>
@@ -84,21 +84,21 @@ const Header = () => {
                 <div className={`md:hidden w-full min-h-screen flex flex-col items-center py-10 border-t-[1px]  border-t-gray-800 ${isToggleOn ? 'bg-black text-white border-b-gray-800' : 'bg-white text-black border-b-gray-300'}`}>
                     <div className='slide-in'>
                     <Link to="/login">
-                        <div onClick={handleCloseMenu} className={`flex items-center gap-3 my-4  ${isToggleOn ? "border-2 border-gray-500" : "border-2 border-gray-400"}  rounded-md p-2`}>
+                        <div onClick={handleCloseMenu} className={`flex justify-center items-center gap-3 my-4  ${isToggleOn ? "border-2 border-gray-500" : "border-2 border-gray-400"}  rounded-md p-2`}>
                             {userInfo ? <img className={`w-8 h-8 rounded-full border-[2px] border-cyan-700 `} src={userInfo.image ? userInfo.image : userImg} alt="userImg" /> : <FaRegUserCircle className='text-3xl' />}
                             {userInfo && <p className='text-base font-titleFont font-semibold '>{(userInfo.name).toUpperCase()}</p>}
                         </div>
                     </Link>
                     <ul className='flex flex-col items-center gap-4' onClick={handleCloseMenu}>
                         <Link to="./"><li onClick={handleCloseMenu} className='text-base font-bold cursor-pointer duration-300'>Home</li></Link>
-                        <li className='text-base font-bold cursor-pointer duration-300'>Categories</li>
-                        <li className='text-base font-bold cursor-pointer duration-300'>Products</li>
-                        <li className='text-base font-bold cursor-pointer duration-300'>Contact</li>
+                        <Link to="./catagory"><li className='text-base font-bold cursor-pointer duration-300'>Categories</li></Link>
+                        <Link to="./my-orders"><li className='text-base font-bold cursor-pointer duration-300'>Orders</li></Link>                        
+                        <Link to="./contact"><li className='text-base font-bold cursor-pointer duration-300'>Contact</li></Link>
                        <Link to="./about"><li className='text-base font-bold cursor-pointer duration-300'>About</li></Link>
                     </ul>
                 </div>
                     <Link to="./cart" onClick={handleCloseMenu}>
-                        <div className='relative my-4 flex slide-in items-center'>
+                                              <div className='relative my-4 flex slide-in items-center'>
                             <BsBag className={`text-4xl w-6 h-6 ${isToggleOn ? 'text-white' : 'text-black'}`} />
                             <span className={`absolute w-6 top-2 left-0 text-xs flex items-center justify-center font-semibold ${isToggleOn ? 'text-white' : 'text-black'}`}>
                                 {productData.length}

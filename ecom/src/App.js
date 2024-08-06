@@ -9,7 +9,9 @@ import Product from './components/Product';
 import { useSelector } from 'react-redux';
 import Login from './pages/Login';
 import About from './pages/About';
+import Contact from './pages/Contact';
 import Orders from './components/Orders'
+import Catagory from './pages/Catagory';
 
 const Layout=()=>{
   return(
@@ -51,7 +53,16 @@ const router = createBrowserRouter([
   {
     path:"/my-orders",
     element:<Orders/>
-  }
+  },
+  {
+    path:"/catagory",
+    element:<Catagory/>,
+  },
+  {
+    path:"/contact",
+    element:<Contact/>,
+  },
+
     
   ],
   },

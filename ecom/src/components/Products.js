@@ -5,7 +5,6 @@ import {  useSelector } from 'react-redux';
 const Products = ({products}) => {
 
     const isToggleOn = useSelector((state) => state.chicloom.isToggleOn);
-    console.log(isToggleOn)
     return (
         <div className='py-6 mx-2'>
             <div className='flex flex-col mx-2 items-center gap-4'>

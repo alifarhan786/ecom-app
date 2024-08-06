@@ -91,11 +91,12 @@ const Cart = () => {
   return (
     <div>
       <img
-        className='w-full h-40 object-cover'
+        className='hidden md:flex w-full h-40 object-cover'
         src='https://images.pexels.com/photos/20791653/pexels-photo-20791653/free-photo-of-blurry-view-of-a-cloudy-sky.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
         alt='cartImg'
       />
-      <div className='max-w-screen-xxl mx-4 py-10 flex flex-col md:flex-row gap-2'>
+      <div className='max-w-screen-xxl mx-4 py-6 md:py-10 flex flex-col md:flex-row
+      '>
         {productData.length === 0 ? (
           <div className='w-full'>
             <h2 className='w-full h-10 text-2xl text-center font-titleFont border-b-[1px] border-b-gray-500'>
@@ -115,11 +116,11 @@ const Cart = () => {
             </Link>
           </div>
         ) : (
-          <>
-            <div className='w-full md:w-2/3'>
+          < div className=' md:flex w-full gap-6 md:mx-6'>
+            <div className='w-full md:w-2/3 '>
               <CartItem />
             </div>
-            <div className={`w-full h-1/2 md:w-1/3 ${isToggleOn ? 'bg-gray-800' : 'bg-gray-100'} py-6 px-4`}>
+            <div className={`w-full max-h-[300px] md:w-1/3 ${isToggleOn ? 'bg-gray-800' : 'bg-gray-100'} py-6 px-4`}>
               <div className='flex flex-col gap-6 border-b-[1px] border-b-gray-500 pb-6'>
                 <h2 className='text-2xl font-medium'>Cart Totals</h2>
                 <p className='flex items-center gap-4 text-base'>
@@ -142,12 +143,12 @@ const Cart = () => {
               </p>
               <button
                 onClick={handleCheckout}
-                className='bg-black text-white py-3 w-full text-base mt-6 hover:bg-gray-800 duration-300'
+                className=' w-full bg-white text-black py-3  text-base mt-6 hover:bg-black hover:text-white duration-300'
               >
                 Proceed To Checkout
               </button>
             </div>
-          </>
+          </div>
         )}
       </div>
       <ToastContainer
