@@ -258,6 +258,7 @@
   font-size: 18px;
   transition: all ease 0.4s;
   overflow: hidden;
+  
 }
 
 #Navbar li::after {

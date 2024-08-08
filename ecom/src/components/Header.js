@@ -36,9 +36,9 @@ const Header = () => {
                         <img className='w-28 slide-in' src={isToggleOn ? logoLight : logoDark} alt="logo" />
                     </div>
                 </Link>
-                <div className='hidden md:flex item-center gap-8 slide-in' >
-                    <ul id='Navbar' className='flex item-center gap-2'>
-                        <Link><li className={` group flex ${isToggleOn ? "after:bg-white " : "after:bg-black"}`}><h4 className={`${isToggleOn ? " text-white group-hover:text-black" : "text-black group-hover:text-white"}`}>Home</h4></li></Link>
+                <div className='hidden h-screen md:flex items-center justify-center  gap-6 slide-in' >
+                    <ul id='Navbar' className='h-screen flex items-center justify-center gap-2'>
+                        <Link><li className={` group flex items-center ${isToggleOn ? "after:bg-white " : "after:bg-black"}`}><h4 className={`${isToggleOn ? " text-white group-hover:text-black" : "text-black group-hover:text-white"}`}>Home</h4></li></Link>
                         <Link to="./catagory"><li className={`group items-center ${isToggleOn ? " after:bg-white " : " after:bg-black "}  `}><h4 className={`${isToggleOn ? " text-white group-hover:text-black" : "text-black group-hover:text-white"}`}>Catagories</h4></li></Link>
                         <Link to="./my-orders"><li className={`group ${isToggleOn ? "after:bg-white " : "after:bg-black"}  `}><h4 className={`${isToggleOn ? " text-white group-hover:text-black" : "text-black group-hover:text-white"}`}>Orders</h4></li></Link>
                         <Link to="./contact"><li className={`group ${isToggleOn ? "after:bg-white " : "after:bg-black"}`}><h4 className={`${isToggleOn ? " text-white group-hover:text-black" : "text-black group-hover:text-white"}`}>Contact</h4></li></Link>
