@@ -9,6 +9,17 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    function ({ addUtilities }) {
+      addUtilities(
+        {
+          '.no-tap-highlight': {
+            '-webkit-tap-highlight-color': 'transparent',
+          },
+        },
+        ['responsive', 'hover']
+      );
+    },
+  ],
 }
 

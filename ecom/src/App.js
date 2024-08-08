@@ -12,6 +12,10 @@ import About from './pages/About';
 import Contact from './pages/Contact';
 import Orders from './components/Orders'
 import Catagory from './pages/Catagory';
+import 'leaflet/dist/leaflet.css';
+import MensCatagory from './pages/MensCatagory';
+import WomensCatagory from './pages/WomensCatagory';
+
 
 const Layout=()=>{
   return(
@@ -62,6 +66,17 @@ const router = createBrowserRouter([
     path:"/contact",
     element:<Contact/>,
   },
+  {
+    path:"/mens-catagory",
+    element:<MensCatagory/>,
+    loader: productsData,
+  },
+  {
+    path:"/womens-catagory",
+    element:<WomensCatagory/>,
+    loader: productsData,
+  },
+
 
     
   ],

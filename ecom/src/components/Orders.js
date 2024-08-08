@@ -10,10 +10,14 @@ const Orders = () => {
 }
 
   return (
-    <div className={`min-h-screen p-5 ${isToggleOn ? 'bg-black text-white' : 'bg-white text-black'}`}>
-      <h1 className='text-3xl font-bold mb-5'>My Orders</h1>
+    <div className={`min-h-screen p-5 ${isToggleOn ? 'bg-black text-white' : 'bg-white text-black'}`}>     
+      <div className='flex flex-col mx-2 items-center gap-4'>
+                <h1 className={`text-2xl border-r ${isToggleOn?'bg-white text-black':'bg-black text-white'} py-2 w-80 text-center fade-in`}>My Orders</h1>
+                <span className='w-20 h-[3px] bg-gray-500'></span>
+            </div>
+      <span className='w-30 h-[4px] bg-gray-500'></span>
       {orders.length === 0 ? (
-        <p>You have no orders yet.</p>
+        <p className=' text-center mt-2 font-bold font-bodyFont'>You have no orders yet.</p>
       ) : (
         orders.map((order) => (
           <div key={order.id} className='mb-4 p-5 border rounded-md'>

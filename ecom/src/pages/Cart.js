@@ -54,10 +54,10 @@ const Cart = () => {
               date: new Date().toISOString().split('T')[0], // Current date
               items: productData,
               totalAmount: totalAmt,
-              status: 'Processing',
+              status: 'Paymen Successful',
             };
-             // Save order to backend after payment is successful
-           
+            // Save order to backend after payment is successful
+
 
             dispatch(addOrder(newOrder)); // Dispatch the addOrder action
             dispatch(resetCart()); // Reset the cart
@@ -73,7 +73,7 @@ const Cart = () => {
             address: 'Corporate Office',
           },
           theme: {
-            color: '#3399cc',
+            color: '#000',
           },
         };
 
@@ -99,16 +99,17 @@ const Cart = () => {
       '>
         {productData.length === 0 ? (
           <div className='w-full'>
-            <h2 className='w-full h-10 text-2xl text-center font-titleFont border-b-[1px] border-b-gray-500'>
-              Your Cart is Empty
-            </h2>
-            <Link to="/">
+            <div className='flex flex-col mx-2  items-center gap-4'>
+              <h1 className={`text-2xl border-b-4 border-gray-500  py-2 w-80 text-center fade-in`}>Your Cart is Empty</h1>
+              <span className='w-20 h-[3px] bg-gray-500'></span>
+            </div>
+
+            <Link to="/" className='flex justify-center no-tap-highlight'>
               <button
-                className={`${
-                  isToggleOn
+                className={`${isToggleOn
                     ? 'text-white hover:text-gray-400'
                     : 'text-gray-600 hover:text-gray-900'
-                } mt-8 text-2xl flex items-center gap-1 duration-300`}
+                  } mt-8 text-2xl flex items-center justify-center gap-1 duration-300`}
               >
                 <MdArrowBackIos />
                 Go Shopping

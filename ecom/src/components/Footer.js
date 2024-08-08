@@ -10,7 +10,7 @@ const Footer = () => {
         <img className='w-32' src={logoLight} alt="logoLight" />
         <p className='text-white text-sm tracking-wide'>@ chicloom.com</p>
         <img className='w-56' src={paymentLogo} alt="paymentLogo" />
-        <div className='flex cursor-pointer text-lg gap-5'>
+        <div className='flex cursor-pointer text-lg gap-5 no-tap-highlight'>
           <FaGithub className='hover:text-white duration-300' />  
           <FaFacebook className='hover:text-white duration-300' />
           <FaInstagram className='hover:text-white duration-300' />
@@ -27,7 +27,7 @@ const Footer = () => {
           <p>Email: chicloom@gmail.com</p>
         </div>
       </div>
-      <div className='flex flex-col gap-2 text-base text-center lg:text-left'>
+      <div className='flex flex-col gap-2 text-base text-center lg:text-left no-tap-highlight'>
         <h2 className='text-2xl font-semibold text-white mb-4'>Profile</h2>
         <p className='flex items-center justify-center lg:justify-start gap-3 hover:text-white cursor-pointer duration-300'>
           <BsPersonFill /> My Account

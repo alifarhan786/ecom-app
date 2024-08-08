@@ -25,9 +25,8 @@ const Login = () => {
                 image: user.photoURL,
             }));
             const orders = await fetchOrders(user.uid);
-           
             dispatch(setOrders(orders));
-
+    
             setTimeout(() => {
                 navigate("/");
             }, 1500);

@@ -1,0 +1,42 @@
+ <!-- <div className='fade-in'>
+  This text will fade in.
+</div>
+
+<div className='slide-in'>
+  This text will slide in from the bottom.
+</div>
+
+<div className='zoom-in'>
+  This text will zoom in.
+</div>
+
+<div className='rotate-in'>
+  This text will rotate in.
+</div>
+
+<div className='slide-in-left'>
+  This text will slide in from the left.
+</div>
+
+<div className='slide-in-right'>
+  This text will slide in from the right.
+</div>
+<div className='bounce-in'>
+  This text will bounce in.
+</div>
+
+<div className='flip-in-x'>
+  This text will flip in along the X-axis.
+</div>
+
+<div className='light-speed-in'>
+  This text will slide in with light speed.
+</div>
+
+<div className='roll-in'>
+  This text will roll in.
+</div>
+
+<div className='shake'>
+  This text will shake.
+</div> -->
